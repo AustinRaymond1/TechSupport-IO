@@ -126,7 +126,11 @@ public class Responder
         try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
             String response = reader.readLine();
             while(response != null) {
+                if (response.trim().length() == 0){
+                }
+                else{
                 defaultResponses.add(response);
+            }
                 response = reader.readLine();
             }
         }
